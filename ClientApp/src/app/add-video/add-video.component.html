@@ -1,3 +1,39 @@
-<p>
-  add-video works!
-</p>
+<div>
+  <form #videoForm="ngForm" (ngSubmit)="addVideo()">
+    <div class="form-group">
+      <label for="name">Title</label>
+      <input #title="ngModel" [(ngModel)]="video.title"
+             class="form-control"
+             name="title"
+             required
+             type="text">
+    </div>
+
+    <div class="form-group">
+      <label for="link">Link</label>
+      <input #link="ngModel" [(ngModel)]="video.link"
+             class="form-control"
+             name="link"
+             required
+             type="text">
+    </div>
+
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <select #genre="ngModel"
+              [(ngModel)]="video.genre"
+              class="form-control"
+              name="genre"
+              required>
+        <option *ngFor="let genre of genres" [value]="genre">{{genre}}</option>
+      </select>
+    </div>
+
+    <button [disabled]="!videoForm.form.valid" class="btn btn-success"
+            type="submit">Submit
+    </button>
+    <button (click)="videoForm.reset()" class="btn"
+            type="reset">Reset
+    </button>
+  </form>
+</div>

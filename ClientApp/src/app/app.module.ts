@@ -10,13 +10,15 @@ import {VideoListComponent} from './video-list/video-list.component';
 import {AddVideoComponent} from './add-video/add-video.component';
 import {windowProvider} from '../window';
 import {VideosService} from "./videos.service";
+import {UpdateVideoComponent} from './update-video/update-video.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     VideoListComponent,
-    AddVideoComponent
+    AddVideoComponent,
+    UpdateVideoComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
@@ -25,6 +27,7 @@ import {VideosService} from "./videos.service";
     RouterModule.forRoot([
       {path: '', component: VideoListComponent, pathMatch: 'full'},
       {path: 'add-video', component: AddVideoComponent},
+      {path: 'update-video', component: UpdateVideoComponent},
     ])
   ],
   providers: [

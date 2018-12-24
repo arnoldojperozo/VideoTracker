@@ -25,4 +25,8 @@ export class VideosService {
 
     return this.httpClient.put(`/api/Videos/${video.id}`, video);
   }
+
+  updateVideo(video: Video) {
+    return this.httpClient.put(`/api/Videos/${video.id}`, video);
+  }
 }
